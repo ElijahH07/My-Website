@@ -78,8 +78,10 @@ export default function Portfolio() {
     }
   ];
 
-  const scrollToSection = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToSection = (id: string) => {
+    if (typeof window !== 'undefined') {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
